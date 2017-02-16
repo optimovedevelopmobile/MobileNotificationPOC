@@ -3,8 +3,11 @@ package com.optimove.mobile.develop.optimovepushnotificationpoc;
 import android.content.Intent;
 import android.util.Log;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+
+import java.io.IOException;
 
 /**
  * Created by yossi_c on 16/1/2017.
@@ -17,10 +20,25 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     public void onTokenRefresh() {
         super.onTokenRefresh();
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
         // Log and toast
         String msg = getString(R.string.msg_token_fmt, refreshedToken);
         Log.d(TAG, "Refreshed token: " + msg);
+
+
+        // Retrieve my other app.
+        FirebaseApp app = FirebaseApp.getInstance("secondary");
+        FirebaseInstanceId secondery  = FirebaseInstanceId.getInstance(app);
+        String senderId = "1055457349234";
+        String refreshedTokenSecondery = null;
+        try {
+            refreshedTokenSecondery = secondery.getToken(senderId, "FCM");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //(1055457349234, "FCM");
+        // Log and toast
+        String msgSecondery = getString(R.string.msg_token_fmt, refreshedTokenSecondery);
+        Log.d(TAG, "Refreshed Secondery token: " + msgSecondery);
 
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the

@@ -29,6 +29,10 @@ import com.google.android.gms.appinvite.AppInviteReferral;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.piwik.sdk.PiwikApplication;
 import org.piwik.sdk.TrackHelper;
@@ -69,6 +73,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         Tracker tracker = ((PiwikApplication) getApplication()).getTracker();
         TrackHelper.track().screen("/MainActivity").title("MainActivity").with(tracker);
+
+
+        FirebaseOptions options = new FirebaseOptions.Builder()
+                .setApplicationId("1:1055457349234:android:233f15c4971138c2") // Required for Analytics.
+                .setApiKey("AIzaSyDrds9sKgr6DaCV9eeynay8BFqW6BtP8sg") // Required for Auth.
+                .setDatabaseUrl("https://optimovepoc.firebaseio.com/") // Required for RTDB.
+                .build();
+        FirebaseApp.initializeApp(this /* Context */, options, "secondary");
+        // Retrieve my other app.
+        FirebaseApp app = FirebaseApp.getInstance("secondary");
+        // Get the database for the other app.
+        FirebaseDatabase secondaryDatabase = FirebaseDatabase.getInstance(app);
+        DatabaseReference myRef = secondaryDatabase.getReference("message");
+
+        myRef.setValue("Hello, World!");
+
+
+
 
         // Build GoogleApiClient with AppInvite API for receiving deep links
         GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
