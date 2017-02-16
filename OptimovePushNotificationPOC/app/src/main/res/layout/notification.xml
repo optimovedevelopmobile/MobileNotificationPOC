@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/content_layout_text_not_expanded"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1.7">
+
+        <TextView
+            android:id="@+id/custom_content_title_not_expanded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/NotificationContent"
+            android:text = "My Text TITLE !!! "
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:layout_gravity="left"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/custom_content_text_not_expanded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/NotificationContent"
+            android:text = "My text content"
+            android:textColor="@color/com_facebook_button_background_color"
+            android:gravity="left"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+         />
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/ic_expanded_notification"
+        android:layout_alignRight="@id/content_layout_text_not_expanded"
+        android:gravity="right"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="visible"
+        android:contentDescription="@string/robot_image_text" />
+
+
+</LinearLayout>

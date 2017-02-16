@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">OptiPush Notification Services POC</string>
+    <string name="action_settings">Settings</string>
+    <string name="msg_token_fmt">Instance ID Token: %s</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="facebook_app_id">1629495270689409</string>
+    <string name="fb_login_protocol_scheme">fb1629495270689409</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="ticer__notif_text">Opti Custom Notification</string>
+    <string name="robot_image_text">Robot</string>
+    <string name="normal">I\'m the Normal Simple notification.\nCreated at: %s</string>
+    <string name="collapsed">I\'m the collapsed notification.\nCreated at: %s</string>
+    <string name="expanded">I\'m the expanded notification.\nCollapse me !</string>
+    <string name="expanded_robot_image">expanded image</string>
+    <string name="createNotification">Create Notification</string>
+    <string name="createNotificationStyleInbox">Create Syled Inbox Notification</string>
+    <string name="createNotificationBigText">Create Big Text Style Notification</string>
+    <string name="createNotificationBigPicture">Create Big Picture Style Notification</string>
+    <string name="createNotificationCustomView">Create Custom View Notification</string>
+</resources>
